@@ -10,13 +10,13 @@ from bs4 import BeautifulSoup
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# Apply nest_asyncio for compatibility
+
 nest_asyncio.apply()
 
-# Initialize and Update Database Schema
+
 class Memory:
     def __init__(self):
-        self.conn = sqlite3.connect("memory.db")  # Persistent database file
+        self.conn = sqlite3.connect("memory.db")  
         self.cursor = self.conn.cursor()
         self.cursor.execute("""
             CREATE TABLE IF NOT EXISTS storage (
@@ -40,7 +40,7 @@ class Memory:
         self.cursor.execute("SELECT query, result, score FROM storage ORDER BY score DESC LIMIT ?", (limit,))
         return self.cursor.fetchall()
 
-# API-based Web Data Fetching
+
 def fetch_web_data(query):
     try:
         google_api_key = os.getenv("GOOGLE_API_KEY")
@@ -56,7 +56,7 @@ def fetch_web_data(query):
         print(f"Google Search API error: {e}")
     return fetch_fallback_data()
 
-# Fallback if API fails
+
 def fetch_fallback_data():
     energy_sources = [
         {"idea": "Solar panels on rooftops", "score": None, "info": "cost: $200/unit"},
@@ -66,7 +66,7 @@ def fetch_fallback_data():
     ]
     return random.choice(energy_sources)
 
-# AI Agents
+
 class GenerationAgent:
     async def process(self, query):
         return fetch_web_data(query)
@@ -111,7 +111,7 @@ class ProximityAgent:
             return f"Proximity Suggestion: Consider revisiting '{past_results[0][1]}' from previous research."
         return "Proximity Suggestion: No prior relevant data found."
 
-# Supervisor Agent
+
 class Supervisor:
     def __init__(self):
         self.memory = Memory()
@@ -127,13 +127,13 @@ class Supervisor:
     async def execute(self, query):
         print(f"\n🚀 Processing Query: {query}\n")
 
-        # Ensure stored data is retrieved before processing
+    
         proximity_suggestion = await self.agents["proximity"].process(query, self.memory)
         print(f"🔗 {proximity_suggestion}\n")
 
         hypothesis = await self.agents["generation"].process(query)
 
-        for cycle in range(1, 4):  # 3 Iterative Cycles
+        for cycle in range(1, 4):  
             print(f"\n================== Cycle {cycle} ==================\n")
             print(f"🧠 Generation → Retrieved: '{hypothesis['idea']}' from web data.\n")
 
