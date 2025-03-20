@@ -1,13 +1,13 @@
-# The Second Mind - AI-Powered Research System
+The Second Mind - AI-Powered Research System
 
-## 🚀 Project Overview
+🚀 Project Overview
 The Second Mind is an AI-driven multi-agent system designed to mimic human learning. It iteratively refines research outputs using real-time web data and stored memory, making smarter decisions over multiple cycles.
 
 This system was developed for the IIT Hyderabad Hackathon and leverages specialized AI agents to improve research insights dynamically.
 
 ---
-##🧠 How It Works
-Our system consists of **six specialized agents** managed by a **Supervisor Agent**:
+🧠 How It Works
+Our system consists of six specialized agents managed by a Supervisor Agent:
 1. Generation Agent– Retrieves initial ideas from web data (Google Search API, BeautifulSoup).
 2. Reflection Agent – Validates data coherence and relevance.
 3. Ranking Agent – Scores research ideas using NLP (TF-IDF, Cosine Similarity).
@@ -18,7 +18,7 @@ Our system consists of **six specialized agents** managed by a **Supervisor Agen
 Each query undergoes multiple cycles, where weak ideas are replaced with stronger, more relevant alternatives.
 
 ---
-## 🔑 Key Features
+🔑 Key Features
 ✅ Memory-Driven Learning– Stores past queries and intelligently recalls relevant insights.
 ✅ Real-Time Web Extraction – Uses Google Search API and fallback web scraping.
 ✅ Iterative Refinement – Improves research outputs over multiple cycles.
@@ -26,14 +26,14 @@ Each query undergoes multiple cycles, where weak ideas are replaced with stronge
 ✅ Scalability – Can be expanded with additional agents for deeper learning.
 
 ---
-## ⚙️ Setup & Execution
-### 1️⃣ Install Dependencies
+⚙️ Setup & Execution
+1️⃣ Install Dependencies
 Ensure Python 3.8+ is installed. Then, run:
 ```bash
 pip install requests beautifulsoup4 scikit-learn nest-asyncio
 ```
 
-### 2️⃣ Set Up Google Search API (Optional)
+2️⃣ Set Up Google Search API (Optional)
 - Create a Google Search API key and Custom Search Engine ID.
 - Add them to environment variables:
 ```bash
@@ -41,7 +41,7 @@ export GOOGLE_API_KEY='your_api_key'
 export CUSTOM_SEARCH_ENGINE_ID='your_cse_id'
 ```
 
-### 3️⃣ Run the System
+3️⃣ Run the System
 Execute the script:
 ```bash
 python main.py
@@ -49,8 +49,9 @@ python main.py
 
 ---
 🏆 Example Output
-Query:"urban energy solutions"
+Query:"Urban energy solutions"
 ```
+
 🚀 Processing Query: urban energy solutions
 🔎 Debug: Current stored queries: [('urban energy solutions', 'Hydrogen fuel cells for city transport', 5)]
 🔗 Proximity Suggestion: Consider revisiting 'Hydrogen fuel cells for city transport' from previous research.
