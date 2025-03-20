@@ -1,9 +1,9 @@
 # The Second Mind - AI-Powered Research System
 
 ## 🚀 Project Overview
-The Second Mind is an AI-driven multi-agent system designed to mimic human learning. It iteratively refines research outputs using **real-time web data** and **stored memory**, making smarter decisions over multiple cycles.
+The Second Mind is an AI-driven multi-agent system designed to mimic human learning. It iteratively refines research outputs using real-time web data and stored memory, making smarter decisions over multiple cycles.
 
-This system was developed for the **IIT Hyderabad Hackathon** and leverages specialized AI agents to improve research insights dynamically.
+This system was developed for the IIT Hyderabad Hackathon and leverages specialized AI agents to improve research insights dynamically.
 
 ---
 ##🧠 How It Works
@@ -13,17 +13,17 @@ Our system consists of **six specialized agents** managed by a **Supervisor Agen
 3. Ranking Agent – Scores research ideas using NLP (TF-IDF, Cosine Similarity).
 4. Evolution Agent – Refines ideas based on trends and new research.
 5. Proximity Agent – Recalls past research to enhance continuity.
-6. **Meta-Review Agent – Evaluates improvements and suggests refinements.
+6. Meta-Review Agent – Evaluates improvements and suggests refinements.
 
-Each query undergoes **multiple cycles**, where weak ideas are replaced with stronger, more relevant alternatives.
+Each query undergoes multiple cycles, where weak ideas are replaced with stronger, more relevant alternatives.
 
 ---
 ## 🔑 Key Features
-✅ **Memory-Driven Learning** – Stores past queries and intelligently recalls relevant insights.
-✅ **Real-Time Web Extraction** – Uses Google Search API and fallback web scraping.
-✅ **Iterative Refinement** – Improves research outputs over multiple cycles.
-✅ **Clear Console Output** – Displays agent interactions and decision-making process.
-✅ **Scalability** – Can be expanded with additional agents for deeper learning.
+✅ Memory-Driven Learning– Stores past queries and intelligently recalls relevant insights.
+✅ Real-Time Web Extraction – Uses Google Search API and fallback web scraping.
+✅ Iterative Refinement – Improves research outputs over multiple cycles.
+✅ Clear Console Output – Displays agent interactions and decision-making process.
+✅ Scalability – Can be expanded with additional agents for deeper learning.
 
 ---
 ## ⚙️ Setup & Execution
