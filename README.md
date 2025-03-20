@@ -8,12 +8,12 @@ This system was developed for the **IIT Hyderabad Hackathon** and leverages spec
 ---
 ##🧠 How It Works
 Our system consists of **six specialized agents** managed by a **Supervisor Agent**:
-1. **Generation Agent** – Retrieves initial ideas from web data (Google Search API, BeautifulSoup).
-2. **Reflection Agent** – Validates data coherence and relevance.
-3. **Ranking Agent** – Scores research ideas using NLP (TF-IDF, Cosine Similarity).
-4. **Evolution Agent** – Refines ideas based on trends and new research.
-5. **Proximity Agent** – Recalls past research to enhance continuity.
-6. **Meta-Review Agent** – Evaluates improvements and suggests refinements.
+1. Generation Agent– Retrieves initial ideas from web data (Google Search API, BeautifulSoup).
+2. Reflection Agent – Validates data coherence and relevance.
+3. Ranking Agent – Scores research ideas using NLP (TF-IDF, Cosine Similarity).
+4. Evolution Agent – Refines ideas based on trends and new research.
+5. Proximity Agent – Recalls past research to enhance continuity.
+6. **Meta-Review Agent – Evaluates improvements and suggests refinements.
 
 Each query undergoes **multiple cycles**, where weak ideas are replaced with stronger, more relevant alternatives.
 
@@ -49,34 +49,44 @@ python main.py
 
 ---
 🏆 Example Output
-Query:"Renewable energy for urban areas"
+Query:"urban energy solutions"
 ```
-🚀 Processing Query: Renewable energy for urban areas
-
-🔗 Proximity Suggestion: No prior relevant data found.
+🚀 Processing Query: urban energy solutions
+🔎 Debug: Current stored queries: [('urban energy solutions', 'Hydrogen fuel cells for city transport', 5)]
+🔗 Proximity Suggestion: Consider revisiting 'Hydrogen fuel cells for city transport' from previous research.
 
 ================== Cycle 1 ==================
-🧠 Generation → Retrieved: 'Smart grids for urban energy efficiency' from web data.
-🔍 Reflection → Validated: Confirmed: Smart grids for urban energy efficiency (savings: 30%)
-📊 Ranking → Scored: 4/10
-🔄 Evolution → Refined: 'Smart grids' → 'Wind turbines integrated into buildings', Score: 6/10
-💾 Memory → Stored: 'Wind turbines integrated into buildings - Score: 6/10'.
-📌 Meta-Review → Consider refining ranking and exploring hybrid solutions.
+
+🧠 Generation → Retrieved: 'Wind turbines integrated into buildings' from web data.
+🔍 Reflection → Validated: Confirmed: Wind turbines integrated into buildings (efficiency: 75%)
+📊 Ranking → Scored: 3/10
+🔄 Evolution → Refined: 'Wind turbines integrated into buildings' → 'Solar panels on rooftops', Score: 6/10
+💾 Memory → Stored: 'Solar panels on rooftops - Score: 6/10'.
+🔎 Debug: Stored queries after cycle: [('urban energy solutions', 'Solar panels on rooftops', 6)]
+📌 Meta-Review → Feedback: Meta-review: Moderate improvement. Consider refining ranking and evolution further.
+====================================================
 
 ================== Cycle 2 ==================
-🧠 Generation → Retrieved: 'Wind turbines integrated into buildings' from memory.
-📊 Ranking → Scored: 6/10
-🔄 Evolution → Refined: 'Wind turbines' → 'Solar panels on rooftops', Score: 8/10
-💾 Memory → Stored: 'Solar panels on rooftops - Score: 8/10'.
-📌 Meta-Review → Strong improvement. Consider economic feasibility studies.
+
+🧠 Generation → Retrieved: 'Solar panels on rooftops' from web data.
+🔍 Reflection → Validated: Confirmed: Solar panels on rooftops (efficiency: 75%)
+📊 Ranking → Scored: 3/10
+🔄 Evolution → Refined: 'Solar panels on rooftops' → 'Wind turbines integrated into buildings', Score: 5/10
+💾 Memory → Stored: 'Wind turbines integrated into buildings - Score: 5/10'.
+🔎 Debug: Stored queries after cycle: [('urban energy solutions', 'Wind turbines integrated into buildings', 5)]
+📌 Meta-Review → Feedback: Meta-review: Moderate improvement. Consider refining ranking and evolution further.
+====================================================
 
 ================== Cycle 3 ==================
-🧠 Generation → Retrieved: 'Solar panels on rooftops' from memory.
-📊 Ranking → Scored: 8/10
-🔄 Evolution → No further improvement found.
-💾 Memory → Stored: 'Solar panels on rooftops - Score: 8/10'.
-📌 Meta-Review → Optimized solution reached.
-```
+🧠 Generation → Retrieved: 'Wind turbines integrated into buildings' from web data.
+🔍 Reflection → Validated: Confirmed: Wind turbines integrated into buildings (efficiency: 75%)
+📊 Ranking → Scored: 3/10
+🔄 Evolution → Refined: 'Wind turbines integrated into buildings' → 'Smart grids for urban energy efficiency', Score: 5/10
+💾 Memory → Stored: 'Smart grids for urban energy efficiency - Score: 5/10'.
+🔎 Debug: Stored queries after cycle: [('urban energy solutions', 'Smart grids for urban energy efficiency', 5)]
+📌 Meta-Review → Feedback: Meta-review: Moderate improvement. Consider refining ranking and evolution further.
+
+====================================================
 
 ---
 ## 📌 Why This Project Stands Out
